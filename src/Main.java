@@ -11,9 +11,13 @@ public class Main {
         }.operate(9, 6);
         System.out.println(operate);
 
-        StringManipulator manipulator = (s) -> s.toUpperCase();
-        String upperedCase = manipulator.manipulate("чепуха");
+        StringManipulator upperCaseManipulator = (s) -> s.toUpperCase();
+        String upperedCase = upperCaseManipulator.manipulate("чепуха");
         System.out.println(upperedCase);
+
+        StringManipulator lowerCaseManipulator = String::toLowerCase;
+        String loweredCase = lowerCaseManipulator.manipulate("ЧЕПУХА");
+        System.out.println(loweredCase);
 
         Function<String, Integer> function = StringListProcessor::countUppercase;
         Integer countUpperCase = function.apply("ЧеПуХа");
